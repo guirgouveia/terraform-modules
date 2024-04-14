@@ -71,4 +71,3 @@ variable "scaling_config" {
     min_size     = 1
   }
 }
-

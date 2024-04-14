@@ -1,6 +1,6 @@
 
 resource "aws_security_group" "eks-cluster-sg" {
-  name        = "terraform-eks-cluster"
+  name        = "${var.cluster_name}-eks-cluster"
   description = "Cluster communication with worker nodes"
   vpc_id      = var.vpc_id
 
@@ -15,7 +15,7 @@ resource "aws_security_group" "eks-cluster-sg" {
 }
 
 resource "aws_security_group" "eks-nodegroup" {
-  name        = "terraform-eks-node"
+  name        = "${var.cluster_name}-eks-cluster-node"
   description = "Security group for all nodes in the cluster"
   vpc_id      = var.vpc_id
 
